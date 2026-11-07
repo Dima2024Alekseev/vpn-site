@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function AboutPage() {
   return (
     <>
@@ -14,7 +16,7 @@ export default function AboutPage() {
       <section className="text-center">
         <h2>Присоединяйтесь</h2>
         <p className="lead" style={{ margin: '0 auto 24px' }}>Более 1 000 000 пользователей уже доверяют ShieldVPN.</p>
-        <a href="/register" className="btn btn-primary btn-lg">Создать аккаунт</a>
+        <Link to="/register" className="btn btn-primary btn-lg">Создать аккаунт</Link>
       </section>
     </>
   );

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function PricingPage() {
   return (
     <>
@@ -11,7 +13,7 @@ export default function PricingPage() {
           <div className="price">199 ₽<small>/мес</small></div>
           <p style={{ color: 'var(--muted)', fontSize: 14 }}>Для одного устройства</p>
           <ul><li>1 устройство</li><li>20 стран</li><li>Скорость до 100 Мбит/с</li><li>Email-поддержка</li></ul>
-          <a href="/register" className="btn btn-ghost">Выбрать</a>
+          <Link to="/register" className="btn btn-ghost">Выбрать</Link>
         </div>
         <div className="card price-card popular">
           <span className="tag">Популярный</span>
@@ -19,20 +21,20 @@ export default function PricingPage() {
           <div className="price">349 ₽<small>/мес</small></div>
           <p style={{ color: 'var(--muted)', fontSize: 14 }}>Для всей семьи</p>
           <ul><li>5 устройств</li><li>90 стран, 3000+ серверов</li><li>Скорость до 10 Гбит/с</li><li>WireGuard &amp; OpenVPN</li><li>Поддержка 24/7</li></ul>
-          <a href="/register" className="btn btn-primary">Выбрать</a>
+          <Link to="/register" className="btn btn-primary">Выбрать</Link>
         </div>
         <div className="card price-card">
           <h3>Год</h3>
           <div className="price">2 790 ₽<small>/год</small></div>
           <p style={{ color: 'var(--muted)', fontSize: 14 }}>Скидка 40%</p>
           <ul><li>5 устройств</li><li>Все серверы</li><li>Приоритетная поддержка</li><li>Ранний доступ к функциям</li><li>Бесплатный e-mail</li></ul>
-          <a href="/register" className="btn btn-ghost">Выбрать</a>
+          <Link to="/register" className="btn btn-ghost">Выбрать</Link>
         </div>
       </section>
       <section className="text-center">
         <h2>Не уверены?</h2>
         <p className="lead" style={{ margin: '0 auto 24px' }}>Попробуйте 7 дней бесплатно — без карты и обязательств.</p>
-        <a href="/register" className="btn btn-primary btn-lg">Начать бесплатно</a>
+        <Link to="/register" className="btn btn-primary btn-lg">Начать бесплатно</Link>
       </section>
     </>
   );

@@ -9,6 +9,8 @@ const questions = [
   ['Какие способы оплаты доступны?', 'Банковские карты Visa/Mastercard/МИР, СБП, криптовалюта (BTC, ETH, USDT), а также PayPal.']
 ];
 
+import { Link } from 'react-router-dom';
+
 export default function FAQPage() {
   return (
     <>
@@ -27,7 +29,7 @@ export default function FAQPage() {
       <section className="text-center">
         <h2>Остались вопросы?</h2>
         <p className="lead" style={{ margin: '0 auto 24px' }}>Наша поддержка отвечает в среднем за 5 минут.</p>
-        <a href="/contact" className="btn btn-primary btn-lg">Написать в поддержку</a>
+        <Link to="/contact" className="btn btn-primary btn-lg">Написать в поддержку</Link>
       </section>
     </>
   );

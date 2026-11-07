@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function TermsPage() {
   return (
     <>
@@ -9,7 +11,7 @@ export default function TermsPage() {
       <section className="card">
         <h2>Документ обновляется</h2>
         <p>Пожалуйста, свяжитесь с нашей командой, если вам нужна информация об условиях использования сервиса до публикации новой редакции.</p>
-        <a href="/contact" className="btn btn-primary mt-40">Связаться с поддержкой</a>
+        <Link to="/contact" className="btn btn-primary mt-40">Связаться с поддержкой</Link>
       </section>
     </>
   );

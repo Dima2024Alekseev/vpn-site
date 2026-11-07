@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function LoginPage() {
   return (
     <section>
@@ -7,7 +9,7 @@ export default function LoginPage() {
         <div className="field"><label>Email</label><input type="email" required placeholder="you@example.com" /></div>
         <div className="field"><label>Пароль</label><input type="password" required placeholder="••••••••" /></div>
         <button type="submit" className="btn btn-primary btn-lg">Войти</button>
-        <p className="hint">Нет аккаунта? <a href="/register">Зарегистрироваться</a></p>
+        <p className="hint">Нет аккаунта? <Link to="/register">Зарегистрироваться</Link></p>
         <p className="hint"><a href="#">Забыли пароль?</a></p>
       </form>
     </section>

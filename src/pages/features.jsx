@@ -10,6 +10,8 @@ const features = [
   ['🔒', 'Multi-Hop', 'Цепочка из двух серверов делает ваше соединение практически неотслеживаемым.']
 ];
 
+import { Link } from 'react-router-dom';
+
 export default function FeaturesPage() {
   return (
     <>
@@ -29,7 +31,7 @@ export default function FeaturesPage() {
       <section className="text-center">
         <h2>Готовы испытать?</h2>
         <p className="lead" style={{ margin: '0 auto 24px' }}>Попробуйте все возможности бесплатно в течение 7 дней.</p>
-        <a href="/register" className="btn btn-primary btn-lg">Начать бесплатно</a>
+        <Link to="/register" className="btn btn-primary btn-lg">Начать бесплатно</Link>
       </section>
     </>
   );

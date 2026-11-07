@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function HomePage() {
   return (
     <>
@@ -8,8 +10,8 @@ export default function HomePage() {
             <h1>Твоя свобода<br />в интернете.</h1>
             <p className="lead">Оставайся на связи с миром. Защити свои данные и пользуйся интернетом без границ — на любом устройстве.</p>
             <div className="hero-actions">
-              <a href="/pricing" className="btn btn-primary btn-lg">Попробовать бесплатно <span aria-hidden="true">→</span></a>
-              <a href="/servers" className="btn btn-ghost btn-lg">Изучить серверы</a>
+              <Link to="/pricing" className="btn btn-primary btn-lg">Попробовать бесплатно <span aria-hidden="true">→</span></Link>
+              <Link to="/servers" className="btn btn-ghost btn-lg">Изучить серверы</Link>
             </div>
             <div className="hero-trust"><span aria-hidden="true">✓</span> 30 дней гарантии возврата <span className="trust-divider">·</span> Без скрытых платежей</div>
           </div>
@@ -60,7 +62,7 @@ export default function HomePage() {
         <span className="eyebrow">ТВОЙ ИНТЕРНЕТ. ТВОИ ПРАВИЛА.</span>
         <h2>Готов подключиться?</h2>
         <p className="lead" style={{ margin: '0 auto 30px' }}>Начни пользоваться интернетом свободно. Первые 7 дней — за наш счёт.</p>
-        <a href="/register" className="btn btn-primary btn-lg">Создать аккаунт <span aria-hidden="true">→</span></a>
+        <Link to="/register" className="btn btn-primary btn-lg">Создать аккаунт <span aria-hidden="true">→</span></Link>
       </section>
     </>
   );

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function RegisterPage() {
   return (
     <section>
@@ -19,11 +21,11 @@ export default function RegisterPage() {
         <div className="field">
           <label style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
             <input type="checkbox" required style={{ width: 'auto', marginTop: 5 }} />
-            <span>Я согласен с <a href="/terms" style={{ color: 'var(--accent)' }}>условиями</a> и <a href="/privacy" style={{ color: 'var(--accent)' }}>политикой конфиденциальности</a></span>
+            <span>Я согласен с <Link to="/terms" style={{ color: 'var(--accent)' }}>условиями</Link> и <Link to="/privacy" style={{ color: 'var(--accent)' }}>политикой конфиденциальности</Link></span>
           </label>
         </div>
         <button type="submit" className="btn btn-primary btn-lg">Создать аккаунт</button>
-        <p className="hint">Уже есть аккаунт? <a href="/login">Войти</a></p>
+        <p className="hint">Уже есть аккаунт? <Link to="/login">Войти</Link></p>
       </form>
     </section>
   );

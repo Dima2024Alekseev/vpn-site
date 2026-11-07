@@ -7,6 +7,8 @@ const servers = [
   ['🇸🇬', 'Сингапур', 'P2P · 10 Гбит/с', '132 мс']
 ];
 
+import { Link } from 'react-router-dom';
+
 export default function ServersPage() {
   return (
     <>
@@ -22,7 +24,7 @@ export default function ServersPage() {
               <span className="flag">{flag}</span>
               <div><div className="name">{name}</div><div className="meta">{meta}</div></div>
               <span className="ping">{ping}</span>
-              <a href="/register" className="btn btn-ghost">Подключиться</a>
+              <Link to="/register" className="btn btn-ghost">Подключиться</Link>
             </div>
           ))}
         </div>
@@ -30,7 +32,7 @@ export default function ServersPage() {
       <section className="text-center">
         <h2>Хотите все 90 стран?</h2>
         <p className="lead" style={{ margin: '0 auto 24px' }}>Премиум-подписка открывает все локации и максимальную скорость.</p>
-        <a href="/pricing" className="btn btn-primary btn-lg">Посмотреть тарифы</a>
+        <Link to="/pricing" className="btn btn-primary btn-lg">Посмотреть тарифы</Link>
       </section>
     </>
   );

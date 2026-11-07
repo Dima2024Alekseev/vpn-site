@@ -7,6 +7,8 @@ const platforms = [
   ['📺', 'Android TV', 'Android TV 9+', 'Google Play']
 ];
 
+import { Link } from 'react-router-dom';
+
 export default function DownloadPage() {
   return (
     <>
@@ -27,7 +29,7 @@ export default function DownloadPage() {
       <section className="text-center">
         <h2>Нужен роутер?</h2>
         <p className="lead" style={{ margin: '0 auto 24px' }}>Настройте VPN на роутере — и защитите все устройства в доме сразу.</p>
-        <a href="/faq" className="btn btn-ghost btn-lg">Инструкции в FAQ</a>
+        <Link to="/faq" className="btn btn-ghost btn-lg">Инструкции в FAQ</Link>
       </section>
     </>
   );
