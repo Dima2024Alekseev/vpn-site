@@ -17,6 +17,34 @@ function App() {
     const pathname = location.pathname.replace(/\/+$/, '') || '/';
     const currentRoute = routes.find((route) => route.path === pathname);
     document.title = currentRoute?.title ?? 'ShieldVPN — Быстрый и безопасный VPN';
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+
+    const revealTargets = document.querySelectorAll(
+      'main .route-transition > section, main .card, main .server-row, main .faq-item, main .hero-stats > div'
+    );
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      revealTargets.forEach((element) => element.setAttribute('data-reveal', 'visible'));
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.setAttribute('data-reveal', 'visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
+
+    revealTargets.forEach((element, index) => {
+      element.style.setProperty('--reveal-delay', `${(index % 5) * 55}ms`);
+      element.setAttribute('data-reveal', 'hidden');
+      observer.observe(element);
+    });
+
+    return () => observer.disconnect();
   }, [location.pathname]);
 
   const handleSubmit = (event) => {
@@ -42,7 +70,9 @@ function App() {
     <>
       <Header theme={theme} setTheme={setTheme} />
       <main onSubmitCapture={handleSubmit}>
-        <AppRoutes />
+        <div key={location.pathname} className="route-transition">
+          <AppRoutes />
+        </div>
       </main>
       <Footer />
       {loading && <Preloader onFinished={finishLoading} />}

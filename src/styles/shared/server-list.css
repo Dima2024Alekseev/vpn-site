@@ -1,0 +1,64 @@
+.server-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: .2s;
+    background: rgba(255, 255, 255, .02);
+}
+
+.server-row:hover {
+    border-color: rgba(79, 140, 255, .4);
+    background: rgba(79, 140, 255, .05)
+}
+
+.server-row .flag {
+    font-size: 26px
+}
+
+.server-row .name {
+    font-weight: 600
+}
+
+.server-row .meta {
+    color: var(--muted);
+    font-size: 13px
+}
+
+.server-row .ping {
+    margin-left: auto;
+    color: var(--ok);
+    font-weight: 600
+}
+
+.server-row .btn {
+    margin-left: 16px
+}
+
+@media (max-width: 700px) {
+
+    .server-row {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 8px 12px;
+        padding: 14px;
+    }
+
+    .server-row .ping,
+    .server-row .btn {
+        margin-left: 0;
+    }
+}
+
+.server-row:hover {
+    background: var(--hover-background);
+}
+
+.server-row {
+    background: var(--soft-background);
+    border-color: var(--panel-border);
+}

@@ -10,6 +10,7 @@ const questions = [
 ];
 
 import { Link } from 'react-router-dom';
+import '../styles/pages/faq.css';
 
 export default function FAQPage() {
   return (

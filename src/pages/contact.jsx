@@ -1,3 +1,5 @@
+import '../styles/pages/forms.css';
+
 export default function ContactPage() {
   return (
     <>

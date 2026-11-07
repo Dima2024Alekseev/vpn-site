@@ -1,0 +1,60 @@
+.form {
+    max-width: 440px;
+    margin: 0 auto
+}
+
+.form .field {
+    margin-bottom: 16px
+}
+
+.form label {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 6px
+}
+
+.form input,
+.form select,
+.form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+    transition: .2s;
+    font-family: inherit;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+    border-color: var(--accent)
+}
+
+.form .btn {
+    width: 100%;
+    margin-top: 8px
+}
+
+.form .hint {
+    text-align: center;
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 14px
+}
+
+.form .hint a {
+    color: var(--accent)
+}
+
+.form input,
+.form select,
+.form textarea {
+    background: var(--control-background);
+    border-color: var(--panel-border);
+    color: var(--text);
+}

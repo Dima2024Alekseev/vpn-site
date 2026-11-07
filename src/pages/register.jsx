@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import '../styles/pages/forms.css';
 
 export default function RegisterPage() {
   return (

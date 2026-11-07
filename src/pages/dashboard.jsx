@@ -1,3 +1,7 @@
+import { useState } from 'react';
+import '../styles/pages/dashboard.css';
+import '../styles/shared/server-list.css';
+
 const devices = [
   ['MacBook Pro 14', 'macOS 15', '185.24.xxx.12', 'Сейчас', 'Активно', true],
   ['iPhone 15', 'iOS 18', '185.24.xxx.44', '5 минут назад', 'Активно', true],
@@ -17,6 +21,21 @@ const locations = [
 ];
 
 export default function DashboardPage() {
+  const [connectedLocation, setConnectedLocation] = useState('🇩🇪 Германия — Франкфурт');
+  const [notice, setNotice] = useState('');
+  const connected = connectedLocation !== null;
+
+  const toggleConnection = (location) => {
+    if (connectedLocation === location) {
+      setConnectedLocation(null);
+      setNotice('VPN отключён. Подключение можно восстановить в любой момент.');
+      return;
+    }
+
+    setConnectedLocation(location);
+    setNotice(`Защищённое подключение установлено: ${location}`);
+  };
+
   return (
     <>
       <section>
@@ -26,19 +45,33 @@ export default function DashboardPage() {
         </div>
       </section>
       <section className="grid grid-3">
-        <div className="card"><div className="icon">🔌</div><h3>Текущий статус</h3><p style={{ marginBottom: 12 }}>VPN подключён</p><span className="status on">Защищено</span></div>
-        <div className="card"><div className="icon">🌍</div><h3>Локация</h3><p>🇩🇪 Германия — Франкфурт</p><p style={{ marginTop: 6 }}>IP: 185.24.xxx.12</p></div>
+        <div className="card"><div className="icon">🔌</div><h3>Текущий статус</h3><p style={{ marginBottom: 12 }}>{connected ? 'VPN подключён' : 'VPN отключён'}</p><span className={`status ${connected ? 'on' : 'off'}`}>{connected ? 'Защищено' : 'Нет защиты'}</span></div>
+        <div className="card"><div className="icon">🌍</div><h3>Локация</h3><p>{connectedLocation ?? 'Не выбрана'}</p><p style={{ marginTop: 6 }}>IP: {connected ? '185.24.xxx.12' : 'Скрыт при подключении'}</p></div>
         <div className="card"><div className="icon">📱</div><h3>Устройства</h3><p>3 из 5 подключено</p><p style={{ marginTop: 6 }}>Windows, iPhone, MacBook</p></div>
       </section>
       <section>
         <h2>Быстрое подключение</h2>
-        <div className="server-row"><span className="flag">🇩🇪</span><div><div className="name">Германия — Франкфурт</div><div className="meta">10 Гбит/с · 18 мс</div></div><span className="ping">Подключено</span><a href="#" className="btn btn-ghost">Отключить</a></div>
+        {notice && <p className="connection-notice" role="status">{notice}</p>}
+        <div className="server-row">
+          <span className="flag">🇩🇪</span>
+          <div><div className="name">Германия — Франкфурт</div><div className="meta">10 Гбит/с · 18 мс</div></div>
+          <span className="ping">{connectedLocation === '🇩🇪 Германия — Франкфурт' ? 'Подключено' : '12 мс'}</span>
+          <button
+            type="button"
+            className={`btn ${connectedLocation === '🇩🇪 Германия — Франкфурт' ? 'btn-ghost' : 'btn-primary'}`}
+            onClick={() => toggleConnection('🇩🇪 Германия — Франкфурт')}
+          >
+            {connectedLocation === '🇩🇪 Германия — Франкфурт' ? 'Отключить' : 'Подключить'}
+          </button>
+        </div>
         {locations.map(([flag, name, meta, ping]) => (
           <div className="server-row" key={name}>
             <span className="flag">{flag}</span>
             <div><div className="name">{name}</div><div className="meta">{meta}</div></div>
-            <span className="ping">{ping}</span>
-            <a href="#" className="btn btn-primary">Подключить</a>
+            <span className="ping">{connectedLocation === `${flag} ${name}` ? 'Подключено' : ping}</span>
+            <button type="button" className={`btn ${connectedLocation === `${flag} ${name}` ? 'btn-ghost' : 'btn-primary'}`} onClick={() => toggleConnection(`${flag} ${name}`)}>
+              {connectedLocation === `${flag} ${name}` ? 'Отключить' : 'Подключить'}
+            </button>
           </div>
         ))}
       </section>
