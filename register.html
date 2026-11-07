@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Регистрация — ShieldVPN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="logo"><span class="dot">🛡</span> ShieldVPN</a>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="features.html">Возможности</a></li>
+                <li><a href="servers.html">Серверы</a></li>
+                <li><a href="pricing.html">Тарифы</a></li>
+                <li><a href="download.html">Скачать</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+            <div class="actions"><a href="login.html" class="btn btn-ghost">Вход</a><a href="register.html"
+                    class="btn btn-primary">Начать</a></div>
+            <button class="burger">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1 class="text-center">Создайте аккаунт</h1>
+            <p class="lead text-center" style="margin:0 auto 30px">7 дней бесплатно. Без карты.</p>
+            <form class="form" id="registerForm">
+                <div class="field"><label>Имя</label><input type="text" required placeholder="Иван"></div>
+                <div class="field"><label>Email</label><input type="email" required placeholder="you@example.com"></div>
+                <div class="field"><label>Пароль</label><input type="password" required minlength="8"
+                        placeholder="Минимум 8 символов"></div>
+                <div class="field"><label>Тариф</label>
+                    <select required>
+                        <option>Пробный (7 дней)</option>
+                        <option>Базовый — 199 ₽/мес</option>
+                        <option>Премиум — 349 ₽/мес</option>
+                        <option>Год — 2790 ₽</option>
+                    </select>
+                </div>
+                <div class="field"><label style="display:flex;gap:8px;align-items:flex-start">
+                        <input type="checkbox" required style="width:auto;margin-top:5px"> <span>Я согласен с <a
+                                href="terms.html" style="color:var(--accent)">условиями</a> и <a href="privacy.html"
+                                style="color:var(--accent)">политикой конфиденциальности</a></span>
+                    </label></div>
+                <button type="submit" class="btn btn-primary btn-lg">Создать аккаунт</button>
+                <p class="hint">Уже есть аккаунт? <a href="login.html">Войти</a></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div><a href="index.html" class="logo" style="display:inline-flex"><span class="dot">🛡</span> ShieldVPN</a>
+            </div>
+            <div>
+                <h4>Продукт</h4>
+                <ul>
+                    <li><a href="features.html">Возможности</a></li>
+                    <li><a href="servers.html">Серверы</a></li>
+                    <li><a href="pricing.html">Тарифы</a></li>
+                    <li><a href="download.html">Скачать</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Компания</h4>
+                <ul>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Правовое</h4>
+                <ul>
+                    <li><a href="privacy.html">Конфиденциальность</a></li>
+                    <li><a href="terms.html">Условия</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom"><span>© 2025 ShieldVPN.</span><span>Сделано с ❤️</span></div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

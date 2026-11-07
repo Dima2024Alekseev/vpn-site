@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Контакты — ShieldVPN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="logo"><span class="dot">🛡</span> ShieldVPN</a>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="features.html">Возможности</a></li>
+                <li><a href="servers.html">Серверы</a></li>
+                <li><a href="pricing.html">Тарифы</a></li>
+                <li><a href="download.html">Скачать</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+            <div class="actions"><a href="login.html" class="btn btn-ghost">Вход</a><a href="register.html"
+                    class="btn btn-primary">Начать</a></div>
+            <button class="burger">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="text-center">
+            <h1>Свяжитесь с нами</h1>
+            <p class="lead" style="margin:0 auto">Поддержка работает 24/7. Среднее время ответа — 5 минут.</p>
+        </section>
+
+        <section class="grid grid-3">
+            <div class="card text-center">
+                <div class="icon" style="margin:0 auto 16px">✉️</div>
+                <h3>Email</h3>
+                <p>support@shieldvpn.example</p>
+            </div>
+            <div class="card text-center">
+                <div class="icon" style="margin:0 auto 16px">💬</div>
+                <h3>Онлайн-чат</h3>
+                <p>Доступен в приложении и личном кабинете</p>
+            </div>
+            <div class="card text-center">
+                <div class="icon" style="margin:0 auto 16px">🛡</div>
+                <h3>Партнёрам</h3>
+                <p>partners@shieldvpn.example</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-center mb-20">Или напишите нам</h2>
+            <form class="form"
+                onsubmit="event.preventDefault(); alert('Сообщение отправлено! Мы свяжемся с вами в течение часа.'); this.reset();">
+                <div class="field"><label>Ваше имя</label><input type="text" required placeholder="Иван Иванов"></div>
+                <div class="field"><label>Email</label><input type="email" required placeholder="you@example.com"></div>
+                <div class="field"><label>Тема</label>
+                    <select required>
+                        <option value="">Выберите тему</option>
+                        <option>Проблема с подключением</option>
+                        <option>Оплата и подписка</option>
+                        <option>Технический вопрос</option>
+                        <option>Сотрудничество</option>
+                        <option>Другое</option>
+                    </select>
+                </div>
+                <div class="field"><label>Сообщение</label><textarea rows="5" required
+                        placeholder="Опишите ваш вопрос..."></textarea></div>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div><a href="index.html" class="logo" style="display:inline-flex"><span class="dot">🛡</span> ShieldVPN</a>
+            </div>
+            <div>
+                <h4>Продукт</h4>
+                <ul>
+                    <li><a href="features.html">Возможности</a></li>
+                    <li><a href="servers.html">Серверы</a></li>
+                    <li><a href="pricing.html">Тарифы</a></li>
+                    <li><a href="download.html">Скачать</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Компания</h4>
+                <ul>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Правовое</h4>
+                <ul>
+                    <li><a href="privacy.html">Конфиденциальность</a></li>
+                    <li><a href="terms.html">Условия</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom"><span>© 2025 ShieldVPN.</span><span>Сделано с ❤️</span></div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
