@@ -1,0 +1,13 @@
+#root {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer-description {
+  max-width: 300px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
